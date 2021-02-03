@@ -45,10 +45,13 @@ When intialzing the environment, there are 3 important parameters when initializ
     3. device: which device to use as the inference engine (CPU, GPU, MYRIAD). This is only applicable if vino parameter is true
 
 ## Enviornment Info 
+
+![Screenshot](4_p.png)
+
 The goal of our gym environment is for our robot to learn to navigate to the postion of the red spehere using vision. 
 
 The state is the robot' end effector's x,y position.
 
 Our action is the robot's dx, dy postion
 
-Our reward function is output of the goal classifier network normalized to probabilties from -100 to 0
+Our reward function is output of the goal classifier network normalized to probabilties from -100 to 0. The Input to the network is from the camera image 
