@@ -6,7 +6,11 @@ import numpy as np
 from numpy import linalg
 from .ft_inf import initialize_model
 from .ft_inf import inference
+from .vino_ft_inf import init_vino_model
+from .vino_ft_inf import vino_inference
 import os
+import time
+
 class PandaHoverEnv(gym.Env):
 
     robot = None
@@ -18,9 +22,13 @@ class PandaHoverEnv(gym.Env):
     bb_pos = np.array([0.7, 0.7])
     ball_pos = [0.5, 0.25, 0.1]
     horizon = 0
+    vino = False
+
+    model_load_time = 0
+    inf_time = 0
 
 
-    def __init__(self, gui=False):
+    def __init__(self, gui=False, vino=False, device='CPU'):
 
         directory = os.getcwd() + "/panda_hover/envs/"
 
@@ -79,8 +87,15 @@ class PandaHoverEnv(gym.Env):
         self.action_space = spaces.Box(low=action_low, high=action_high, dtype=np.float32)
         self.observation_space = spaces.Box(low=self.bb_neg, high=self.bb_pos, dtype=np.float32)
 
-        self.model = initialize_model('resnet', directory + 'single_goal_classifier_resnet')
+        self.vino = vino
 
+        start = time.time()
+        if self.vino:
+            self.model = init_vino_model(directory + 'single_goal_classifier_resnet', device)
+        else:
+            self.model = initialize_model('resnet', directory + 'single_goal_classifier_resnet')
+        final = time.time()
+        self.model_load_time = final - start
 
     def move(self, position):
 
@@ -107,6 +122,9 @@ class PandaHoverEnv(gym.Env):
     def reward_classifier(self, img):
         return inference(img, self.model)
 
+    def vino_reward_classifier(self, img):
+        return vino_inference(img, self.model)
+
     def step(self, action):
 
         curr_pose = self.get_position()
@@ -128,7 +146,13 @@ class PandaHoverEnv(gym.Env):
         pos = self.get_position()
 
         done = False
-        nn_output = self.reward_classifier(img)
+        start = time.time()
+        if self.vino:
+            nn_output = self.vino_reward_classifier(img)
+        else:
+            nn_output = self.reward_classifier(img)
+        final = time.time()
+        self.inf_time = self.inf_time + (final - start)
 
         if taken:
             reward = nn_output

@@ -1,8 +1,9 @@
-from panda_visual_reach_env import PandaHover
+import panda_hover
 import os
 import numpy as np
 import random
 import cv2
+import gym
 
 def gen_rand_pos():
     if (random.randint(0, 1)):
@@ -31,7 +32,7 @@ target_neg_val = path + dir_neg_val
 os.makedirs(target_pos_val)
 os.makedirs(target_neg_val)
 
-env = PandaHover()
+env = gym.make('panda_hover-v0', gui=True)
 train_num = 400
 val_num = 100
 for x in range(train_num):
