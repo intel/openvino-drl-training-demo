@@ -46,7 +46,7 @@ When intialzing the environment, there are 3 important parameters when initializ
 
 ## Enviornment Info 
 
-![Screenshot](4_p.png)
+![Screenshot](4_n.png)
 
 The goal of our gym environment is for our robot to learn to navigate to the postion of the red spehere using vision. 
 
