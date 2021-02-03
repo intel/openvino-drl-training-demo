@@ -1,7 +1,7 @@
 import gym
 import panda_hover
 
-env = gym.make('panda_hover-v0')
+env = gym.make('panda_hover-v0', gui=True)
 
 goal_pos = [0.5, 0.25]
 
