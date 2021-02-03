@@ -52,6 +52,6 @@ The goal of our gym environment is for our robot to learn to navigate to the pos
 
 The state is the robot' end effector's x,y position.
 
-Our action is the robot's dx, dy postion
+The action is the robot's dx, dy postion
 
-Our reward function is output of the goal classifier network normalized to probabilties from -100 to 0. The Input to the network is from the camera image 
+The reward function is output of the goal classifier network normalized to probabilties from -100 to 0. The Input to the network is an image from the camera
