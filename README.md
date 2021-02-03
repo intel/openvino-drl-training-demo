@@ -4,7 +4,7 @@ This code repo showcases how one could use Intel's OpenVino to accelerate Deep R
 Specifically, this is for RL problems which leverage pre-trained goal classifiers for their reward function. The same 
 idea can be applied for RL problems which leverage pre-trained autoencoders for state-space reduction. 
 
-## Installing Pre- Requisite Software
+## Installing Pre-Requisite Software
 Step 1: Check to see if the correct version of openMPI is installed on your system (should be 2.1.1)
 
 ```console
