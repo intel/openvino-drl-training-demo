@@ -4,11 +4,11 @@ from stable_baselines.common.policies import MlpPolicy
 from stable_baselines import PPO1
 import time
 
-env = gym.make('panda_hover-v0', gui=False, vino=True, device='GPU' )
+env = gym.make('panda_hover-v0', gui=False, vino=False, device='CPU' )
 
 model = PPO1(MlpPolicy, env, verbose=1, tensorboard_log="./ppo_log/")
 start = time.time()
-model.learn(total_timesteps=100000)
+model.learn(total_timesteps=10000)
 final = time.time()
 model.save("ppo_hover_agent")
 
