@@ -5,6 +5,9 @@ Specifically, this is for RL problems which leverage pre-trained goal classifier
 idea can be applied for RL problems which leverage pre-trained autoencoders for state-space reduction. 
 
 ## Installing Pre-Requisite Software
+
+Note: The code in this repo was validated on python3.6. Highly reccomended to create a seperate python3.6 virtual environment for this code!
+
 Step 1: Check to see if the correct version of openMPI is installed on your system (should be 2.1.1)
 
 ```console
@@ -47,6 +50,13 @@ Step 9: Move generated binaries to proper directory
 ```console
 mv single_goal_classifier_resnet.* panda_hover/envs/
 ```
+
+Step 10: Run vino_agent_training.py. Note the total exection time + training time outputed at the end
+
+Step 11: Run vino_agent_training.py after enabiling vino=True in line 7. Compare the total execution time and training time to Step 10 (should be lower)
+
+Step 12: Run inference.py to see the trained robot!
+
 
 ## Environment Paramters
 
