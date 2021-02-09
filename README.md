@@ -32,6 +32,22 @@ Step 6: After intstalling openvino, enable it by running
 source /opt/intel/openvino_2021/bin/setupvars.sh
 ```
 
+Step 7: Check to see what are the availble devices for openVino to use
+```console
+python /opt/intel/openvino_2021/inference_engine/samples/python/hello_query_device/hello_query_device.py
+```
+
+Step 8: Create openVino binares of the pre-trained reward classifier 
+```console
+python /opt/intel/openvino_2021/deployment_tools/model_optimizer/mo.py --input_model panda_hover/envs/single_goal_classifier_resnet.onnx
+```
+
+Step 9: Move generated binaries to proper directory
+
+```console
+mv single_goal_classifier_resnet.* panda_hover/envs/
+```
+
 ## Environment Paramters
 
 ```python
@@ -40,9 +56,11 @@ env = gym.make('panda_hover-v0', gui=False, vino=False, device='CPU')
 
 When intialzing the environment, there are 3 important parameters when initializing the environment
 
-    1. gui: whether to run the simulation software with a gui or headless 
-    2. vino: whether to use openVino as the inference engine for the reward classifier network or pytorch
-    3. device: which device to use as the inference engine (CPU, GPU, MYRIAD). This is only applicable if vino parameter is true
+1.gui: whether to run the simulation software with a gui or headless
+
+2.vino: whether to use openVino as the inference engine for the reward classifier network or pytorch
+
+3.device: which device to use as the inference engine (CPU, GPU, MYRIAD). This is only applicable if vino parameter is true
 
 ## Enviornment Info 
 
