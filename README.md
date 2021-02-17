@@ -27,7 +27,7 @@ Step 4: Install all the python packages (reccomended to this in a python virtual
 pip3 install -r requirements.txt
 ```
 
-Step 5: Install Intel's OpenVino Tool https://docs.openvinotoolkit.org/latest/openvino_docs_install_guides_installing_openvino_apt.html
+Step 5: Install Intel's OpenVino Tool https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit/download.html
 
 Step 6: After intstalling openvino, enable it by running 
 
