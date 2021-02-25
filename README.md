@@ -4,7 +4,9 @@ This code repo showcases how one could use Intel's OpenVino to accelerate Deep R
 Specifically, this is for RL problems which leverage pre-trained goal classifiers for their reward function. The same 
 idea can be applied for RL problems which leverage pre-trained autoencoders for state-space reduction. 
 
-## Installing Pre-Requisite Software
+## Reproducing this Repo
+
+### Installing Pre-Requisite Software
 
 Note: The code in this repo was validated on python3.6. Highly reccomended to create a seperate python3.6 virtual environment for this code!
 
@@ -26,7 +28,7 @@ Step 4: Install all the python packages (reccomended to this in a python virtual
 ```console
 pip3 install -r requirements.txt
 ```
-
+### Installing and Veryifying OpenVino Install
 Step 5: Install Intel's OpenVino Tool https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit/download.html
 
 Step 6: After intstalling openvino, enable it by running 
@@ -39,7 +41,7 @@ Step 7: Check to see what are the availble devices for openVino to use
 ```console
 python /opt/intel/openvino_2021/inference_engine/samples/python/hello_query_device/hello_query_device.py
 ```
-
+### Optimzing the Reward Network on your machine
 Step 8: Create openVino binares of the pre-trained reward classifier 
 ```console
 python /opt/intel/openvino_2021/deployment_tools/model_optimizer/mo.py --input_model panda_hover/envs/single_goal_classifier_resnet.onnx
@@ -50,7 +52,7 @@ Step 9: Move generated binaries to proper directory
 ```console
 mv single_goal_classifier_resnet.* panda_hover/envs/
 ```
-
+### Training the Agent
 Step 10: Run vino_agent_training.py. Note the total exection time + training time outputed at the end
 
 Step 11: Run vino_agent_training.py after enabiling vino=True in line 7. Compare the total execution time and training time to Step 10 (should be lower)
