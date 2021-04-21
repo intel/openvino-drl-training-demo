@@ -2,7 +2,7 @@ import gym
 import panda_hover
 from stable_baselines3 import SAC
 
-env = gym.make('PandaHover-v0', gui=False)
+env = gym.make('PandaHover-v0', gui=True, vino=True)
 model = SAC.load("sac_hover_agent")
 
 print("Starting Inference")
