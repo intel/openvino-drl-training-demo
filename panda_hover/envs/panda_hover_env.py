@@ -102,8 +102,6 @@ class PandaHoverEnv(gym.Env):
         if not classifier_result:
             done = True
             print("Goal Achieved")
-            self.render()
-            print(classifier_result_probabilities)
             reward = 100
         else:
             if action_taken:
