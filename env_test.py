@@ -2,7 +2,7 @@ import gym
 import panda_hover
 
 
-env = gym.make('PandaHover-v0', gui=False, vino=True)
+env = gym.make('PandaHover-v0', gui=True, vino=True)
 
 for x in range(5):
     observation, reward, done, info = env.step([0.219, -0.301])
