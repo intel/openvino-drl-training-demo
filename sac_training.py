@@ -3,7 +3,7 @@ import panda_hover
 from stable_baselines3 import SAC
 import time
 
-env = gym.make('PandaHover-v0', gui=False, vino=True)
+env = gym.make('PandaHover-v0', gui=False, vino=False)
 
 model = SAC("MlpPolicy", env, verbose=1)
 
