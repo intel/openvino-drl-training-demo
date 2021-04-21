@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ### Training the Agent
 Step 3: sac_training.py. Note the total exection time + training time outputed at the end
 
-Step 4: Run sac_training.py after enabiling vino=True in line 7. Compare the total execution time and training time to Step 3 (should be lower)
+Step 4: Run sac_training.py after enabiling vino=True in line 6. Compare the total execution time and training time to Step 3 (should be lower)
 
 Step 5: Run inference.py to see the trained robot!
 
@@ -31,11 +31,11 @@ env = gym.make('PandaHover-v0', gui=False, vino=False, device='CPU')
 
 When intialzing the environment, there are 3 important parameters when initializing the environment
 
-1.gui: whether to run the simulation software with a gui or headless
+*  gui: whether to run the simulation software with a gui or headless
 
-2.vino: whether to use openVino as the inference engine for the reward classifier network or pytorch
+*  vino: whether to use openVino as the inference engine for the reward classifier network or pytorch
 
-3.device: which Intel device to use as the inference engine (CPU, GPU, MYRIAD). This is only applicable if vino parameter is true
+*  device: which Intel device to use as the inference engine (CPU, GPU, MYRIAD). This is only applicable if vino parameter is true
 
 ## Enviornment Info 
 
