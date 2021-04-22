@@ -16,11 +16,16 @@ pip install -r requirements.txt
 ```
 
 ### Training the Agent
-Step 3: sac_training.py. Note the total exection time + training time outputed at the end
+Step 3: Run the training. Note the total time printed at the end
+```console
+python sac_training.py -g [optional if you want to see the robot during its training]
+```
+Step 4: Run the same training but now using openvino as the inference engine for the reward classifier network. The total time printed at the end should be lower than that of step 3
+```console
+python sac_training.py -v -g [optional if you want to see the robot during its training]
+```
+Step 5: Run inference.py to see the trained agent! 
 
-Step 4: Run sac_training.py after enabiling vino=True in line 6. Compare the total execution time and training time to Step 3 (should be lower)
-
-Step 5: Run inference.py to see the trained robot!
 
 
 ## Environment Paramters
