@@ -2,13 +2,23 @@ import gym
 import panda_hover
 from stable_baselines3 import SAC
 import time
+import argparse
 
-env = gym.make('PandaHover-v0', gui=False, vino=False)
+parser = argparse.ArgumentParser()
+parser.add_argument('-v', '--vino', action='store_true',
+    help="uses openVino for classifier inference")
+parser.add_argument('-g', '--gui', action='store_true',
+    help="gui for robot visualization")
+
+
+args = parser.parse_args()
+
+env = gym.make('PandaHover-v0', gui=args.gui, vino=args.vino)
 
 model = SAC("MlpPolicy", env, verbose=1)
 
 start = time.time()
-model.learn(total_timesteps=6000)
+model.learn(total_timesteps=8000)
 final = time.time()
 model.save("sac_hover_agent")
 
