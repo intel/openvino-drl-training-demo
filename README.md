@@ -1,6 +1,6 @@
 # openVino_Blog
 
-This code repo showcases how one could use Intel's OpenVino to accelerate Deep Reinforcement Learning Training. 
+This code repo showcases how one could use Intel® Distribution of OpenVINO™ toolkit to accelerate Deep Reinforcement Learning Training. 
 Specifically, this is for RL problems which leverage pre-trained goal classifiers for their reward function. The same 
 idea can be applied for RL problems which leverage pre-trained autoencoders for state-space reduction. 
 
@@ -20,7 +20,7 @@ Step 3: Run the training. Note the total time printed at the end
 ```console
 python sac_training.py -g [optional flag if you want to see the robot during its training]
 ```
-Step 4: Run the same training but now using openvino as the inference engine for the reward classifier network. The total time printed at the end should be lower than that of step 3
+Step 4: Run the same training but now using OpenVINO™ toolkit as the inference engine for the reward classifier network. The total time printed at the end should be lower than that of step 3
 ```console
 python sac_training.py -v -g [optional flag if you want to see the robot during its training]
 ```
