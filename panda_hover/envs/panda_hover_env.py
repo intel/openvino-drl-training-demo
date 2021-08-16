@@ -75,15 +75,11 @@ class PandaHoverEnv(gym.Env):
 
     def step(self, action):
         p.configureDebugVisualizer(p.COV_ENABLE_SINGLE_STEP_RENDERING)
-
         dx = action[0]
         dy = action[1]
-
-
         curr_pose = p.getLinkState(self.pandaUid, 11)
         curr_position = curr_pose[0]
         new_position = [curr_position[0] + dx, curr_position[1] + dy, self.hover_z]
-
         action_taken = False
         if (self.obs_low[0] <= new_position[0] <= self.obs_high[0]) and (self.obs_low[1] <= new_position[1] <= self.obs_high[1]):
             self._move_robot(new_position)
@@ -94,8 +90,6 @@ class PandaHoverEnv(gym.Env):
         time_2 = time.time()
         self.inference_time += (time_2 - time_1)
         observation = self._get_robot_position()[0:2]
-
-
         info = {}
         self.horizon = self.horizon + 1
         done = False
@@ -110,7 +104,6 @@ class PandaHoverEnv(gym.Env):
                 reward = -5
         if self.horizon == self.max_episode_length:
             done = True
-
         return observation, reward, done, info
 
     def render(self):
