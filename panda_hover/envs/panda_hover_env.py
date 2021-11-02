@@ -79,8 +79,6 @@ class PandaHoverEnv(gym.Env):
         observation = self._get_robot_position()[0:2]
         return observation
 
-
-
     def step(self, action):
         pybullet.configureDebugVisualizer(pybullet.COV_ENABLE_SINGLE_STEP_RENDERING)
         dx = action[0]
@@ -119,7 +117,6 @@ class PandaHoverEnv(gym.Env):
     def close(self):
         pybullet.disconnect()
 
-
     def _get_image(self):
         (_, _, rgb, _, _) = pybullet.getCameraImage(width=960,
                                               height=720,
@@ -131,7 +128,6 @@ class PandaHoverEnv(gym.Env):
         rgb = rgb[:, :, :3]
         bgr = rgb[:,:, ::-1]
         return bgr
-
 
     def _move_robot(self, position):
         time_1 = time.monotonic()
