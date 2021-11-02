@@ -22,11 +22,11 @@ python sac_training.py -g [optional flag if you want to see the robot during its
 ```
 Step 4: Run the same training but now using OpenVINO™ toolkit as the inference engine for the reward classifier network. The total time printed at the end should be lower than that of step 3
 ```console
-python sac_training.py -v -g [optional flag if you want to see the robot during its training]
+python sac_training.py -ov -g [optional flag if you want to see the robot during its training]
 ```
 Step 5: Run inference.py to see the trained agent! 
 ```console
-python inference.py -v -g
+python inference.py -ov -g
 ```
 ## Enviornment Info 
 
