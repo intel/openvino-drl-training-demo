@@ -4,15 +4,15 @@ from stable_baselines3 import SAC
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-v', '--vino', action='store_true', 
+parser.add_argument('-ov', '--vino', action='store_true',
     help="uses openVino for classifier inference")
-parser.add_argument('-g', '--gui', action='store_true', 
+parser.add_argument('-g', '--gui', action='store_true',
     help="gui for robot visualization")
 
 
 args = parser.parse_args()
 
-env = gym.make('PandaHover-v0', gui=args.gui, vino=args.vino)
+env = gym.make('PandaHover-v0', gui=args.gui, open_vino=args.vino)
 model = SAC.load("sac_hover_agent")
 
 print("Starting Inference")
