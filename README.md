@@ -31,7 +31,7 @@ python inference.py -ov -g
 ```
 ## Enviornment Info 
 
-![Screenshot](234.png)
+![Screenshot](images/234.png)
 
 The goal of our gym environment is for our robot to learn to navigate to the postion of the blue object using perception
 
