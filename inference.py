@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions
 # and limitations under the License.
 
-import gym
-import panda_hover
 from stable_baselines3 import SAC
+import panda_hover
 import argparse
+import gym
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-ov', '--vino', action='store_true',
