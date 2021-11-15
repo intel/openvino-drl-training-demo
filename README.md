@@ -8,13 +8,14 @@ idea can be applied for RL problems which leverage pre-trained autoencoders for 
 This repository was validated using Python 3.8 on Ubuntu 20.04 & Mac OS Catalina 10.15.17
 ### Installing Pre-Requisite Software
 
-Step 1: Git clone this library
-
+Step 1: Clone This Repository 
+```console
+git clone https://github.com/intel/openvino-drl-training-demo
+```
 Step 2: Install all the python packages (reccomended to this in a python virtual environment)
 ```console
 pip install -r requirements.txt
 ```
-
 ### Training the Agent
 Step 3: Run the training. Note the total time printed at the end
 ```console
