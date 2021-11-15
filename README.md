@@ -6,6 +6,9 @@ idea can be applied for DRL problems which leverage pre-trained autoencoders for
 
 ![Screenshot](images/hover_env.png)
 
+We created a Robotics Gym Environment using PyBullet. The goal of our DRL task is to have a robot move toward and hover over the blue object 
+based on visual feedback. The observation of is the robot's x-y position. The action is the dx-dy control of the robot's gripper
+
 ## Reproducing this Repo
 This repository was validated using Python 3.8 on Ubuntu 20.04 & Mac OS Catalina 10.15.17
 ### Installing Pre-Requisite Software
@@ -31,14 +34,4 @@ Step 5: Run inference.py to see the trained agent!
 ```console
 python inference.py -ov -g
 ```
-## Enviornment Info 
 
-![Screenshot](images/234.png)
-
-The goal of our gym environment is for our robot to learn to navigate to the postion of the blue object using perception
-
-The state is the robot' end effector's x,y position.
-
-The action is the robot's dx, dy postion
-
-The reward function is output of the goal classifier network where the Input to the network is an image from the camera
