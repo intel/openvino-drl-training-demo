@@ -116,7 +116,7 @@ class PandaHoverEnv(gym.Env):
             reward = 100
         else:
             if action_taken:
-                reward = -1
+                reward = -1 # standard penalty makes agent learn faster
             else:
                 reward = -5 # robot tried to move outside its workspace. Penalize this
         if self._horizon == self._MAX_EPISODE_LENGTH:
