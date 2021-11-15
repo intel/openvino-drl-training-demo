@@ -4,6 +4,8 @@ This code repo showcases how one could use Intel® Distribution of OpenVINO™ t
 Specifically, this is for DRL problems which leverage pre-trained goal classifiers for their reward function. The same 
 idea can be applied for DRL problems which leverage pre-trained autoencoders for state-space reduction. 
 
+![Screenshot](images/hover_env.png)
+
 ## Reproducing this Repo
 This repository was validated using Python 3.8 on Ubuntu 20.04 & Mac OS Catalina 10.15.17
 ### Installing Pre-Requisite Software
