@@ -1,4 +1,4 @@
-# openVino_Blog
+# Accelerating Deep Reinforcement Learning with OpenVINO
 
 This code repo showcases how one could use Intel® Distribution of OpenVINO™ toolkit to accelerate Deep Reinforcement Learning (DRL) Training. 
 Specifically, this is for DRL problems which leverage pre-trained goal classifiers for their reward function. The same 
